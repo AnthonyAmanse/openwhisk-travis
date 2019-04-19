@@ -1,6 +1,10 @@
 ---
 cache: pip
 
+env:
+  global:
+    - DOCKER_COMPOSE_VERSION: 1.13.0
+
 services:
   - docker
 
