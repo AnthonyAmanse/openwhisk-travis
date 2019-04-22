@@ -1,9 +1,4 @@
 #!/bin/bash
-# Licensed to the Apache Software Foundation (ASF) under one or more contributor
-# license agreements; and to You under the Apache License, Version 2.0.
-
-set -x -e
-uname -sm
 
 DOCKER_COMPOSE="docker-compose"
 DOCKER_COMPOSE_TMP="$DOCKER_COMPOSE.bin"
@@ -25,5 +20,10 @@ fi
 echo "Docker Compose Version:" "$(docker-compose --version)"
 
 git clone https://github.com/apache/incubator-openwhisk-devtools
-cd incubator-openwhisk-devtools/docker-compose
+pushd incubator-openwhisk-devtools/docker-compose
 make quick-start
+WSK_CONFIG_FILE=$(pwd)/.wskprops
+export WSK_CONFIG_FILE
+sudo mv ./openwhisk-src/bin/wsk /usr/local/bin/wsk
+popd
+wsk list
