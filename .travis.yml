@@ -13,9 +13,9 @@ before_install:
   - sudo pip install yamllint
   - git clone https://github.com/IBM/pattern-ci
 
-# before_script:
-#   - "./pattern-ci/tests/shellcheck-lint.sh"
-#   - "./pattern-ci/tests/yaml-lint.sh incubator-openwhisk-devtools"
+before_script:
+  - "./pattern-ci/tests/shellcheck-lint.sh"
+  - "./pattern-ci/tests/yaml-lint.sh"
 
 jobs:
   include:

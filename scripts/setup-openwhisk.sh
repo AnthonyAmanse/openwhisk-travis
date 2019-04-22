@@ -8,7 +8,7 @@ uname -sm
 DOCKER_COMPOSE="docker-compose"
 DOCKER_COMPOSE_TMP="$DOCKER_COMPOSE.bin"
 
-version_exists=`(docker-compose --version | grep ${DOCKER_COMPOSE_VERSION}) || echo "false"`
+version_exists=$( (docker-compose --version | grep "${DOCKER_COMPOSE_VERSION}") || echo "false" )
 
 # This script assumes Docker is already installed
 # Trusty for Travis SHOULD include latest docker compose (e.g., 1.13.0)
@@ -18,11 +18,11 @@ then
     if [ -f /usr/local/bin/$DOCKER_COMPOSE ]; then
         sudo rm /usr/local/bin/$DOCKER_COMPOSE
     fi
-    curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > $DOCKER_COMPOSE_TMP
+    curl -L https://github.com/docker/compose/releases/download/"${DOCKER_COMPOSE_VERSION}"/docker-compose-"$(uname -s)"-"$(uname -m)" > $DOCKER_COMPOSE_TMP
     chmod +x $DOCKER_COMPOSE_TMP
     sudo mv $DOCKER_COMPOSE_TMP /usr/local/bin/$DOCKER_COMPOSE
 fi
-echo "Docker Compose Version:" `docker-compose --version`
+echo "Docker Compose Version:" "$(docker-compose --version)"
 
 git clone https://github.com/apache/incubator-openwhisk-devtools
 cd incubator-openwhisk-devtools/docker-compose
