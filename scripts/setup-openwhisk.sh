@@ -31,8 +31,8 @@ make quick-start
 # make create-provider-cloudant
 
 # move wskprops and wsk binary
-mv "$(pwd)"/.wskprops "${HOME}"/.wskprops
-sudo mv ./openwhisk-src/bin/wsk /usr/local/bin/wsk
+cp "$(pwd)"/.wskprops "${HOME}"/.wskprops
+sudo cp ./openwhisk-src/bin/wsk /usr/local/bin/wsk
 popd
 # wsk -i list
 # wsk -i package list /whisk.system
