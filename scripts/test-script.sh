@@ -3,4 +3,5 @@
 cat "${HOME}"/.wskprops
 
 wsk -i list
-wsk -i action invoke "/whisk.system/utils/echo" --param test test --result
+wsk -i action create test-echo echo.js
+wsk -i action invoke test-echo --param test test --result
