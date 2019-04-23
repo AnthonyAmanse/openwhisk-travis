@@ -20,11 +20,13 @@ fi
 echo "Docker Compose Version:" "$(docker-compose --version)"
 
 git clone https://github.com/apache/incubator-openwhisk-devtools
-git checkout 1c67cef739066f573b864b6f41f694fcae00a86b
 # overwrite makefile
 # Makefile is a modified makefile to silence zip commands
 cp Makefile-openwhisk incubator-openwhisk-devtools/docker-compose/Makefile
 pushd incubator-openwhisk-devtools/docker-compose
+
+# checkout specific commit
+git checkout 1c67cef739066f573b864b6f41f694fcae00a86b
 
 make quick-start
 
