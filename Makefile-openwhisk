@@ -346,6 +346,7 @@ init-whisk-cli:
 .PHONY: init-api-management
 init-api-management:
 	touch $(OPENWHISK_PROJECT_HOME)/whisk.properties
+	sed -i "/zip -r/ s/$/ -q/" $(OPENWHISK_PROJECT_HOME)/ansible/roles/routemgmt/files/installRouteMgmt.sh
 	GW_USER="" \
 	GW_PWD="" \
 	GW_HOST_V2="http://$(DOCKER_HOST_IP):9000/v2" \
