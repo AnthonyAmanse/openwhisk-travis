@@ -16,9 +16,9 @@ before_install:
 before_script:
   - "./pattern-ci/tests/shellcheck-lint.sh"
   - "./pattern-ci/tests/yaml-lint.sh"
+  - "./scripts/setup-openwhisk.sh"
 
 jobs:
   include:
     - script:
-        - "./scripts/setup-openwhisk.sh"
         - "./scripts/test-script.sh"
