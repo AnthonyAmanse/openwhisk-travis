@@ -1,4 +1,4 @@
 #!/bin/bash
 
-wsk list
-wsk action invoke /whisk.system/utils/echo --param test test --result
+wsk -i list
+wsk -i action invoke /whisk.system/utils/echo --param test test --result
