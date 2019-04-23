@@ -22,8 +22,8 @@ echo "Docker Compose Version:" "$(docker-compose --version)"
 git clone https://github.com/apache/incubator-openwhisk-devtools
 pushd incubator-openwhisk-devtools/docker-compose
 make quick-start
-WSK_CONFIG_FILE=$(pwd)/.wskprops
-export WSK_CONFIG_FILE
+# move wskprops and wsk binary
+mv $(pwd)/.wskprops /home/travis/.wskprops
 sudo mv ./openwhisk-src/bin/wsk /usr/local/bin/wsk
 popd
 wsk -i list
