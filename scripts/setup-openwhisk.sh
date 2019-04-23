@@ -25,10 +25,10 @@ pushd incubator-openwhisk-devtools/docker-compose
 make quick-start
 
 # add system packages
-make add-catalog
-make create-provider-alarms
-make create-provider-kafka
-make create-provider-cloudant
+# make add-catalog
+# make create-provider-alarms
+# make create-provider-kafka
+# make create-provider-cloudant
 
 # move wskprops and wsk binary
 mv "$(pwd)"/.wskprops "${HOME}"/.wskprops
