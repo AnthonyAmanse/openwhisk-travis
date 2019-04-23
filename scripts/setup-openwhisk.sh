@@ -22,13 +22,13 @@ echo "Docker Compose Version:" "$(docker-compose --version)"
 git clone https://github.com/apache/incubator-openwhisk-devtools
 pushd incubator-openwhisk-devtools/docker-compose
 
-make quick-start
+make quick-start --silent
 
 # add system packages
-make add-catalog
-make create-provider-alarms
-make create-provider-kafka
-make create-provider-cloudant
+make add-catalog --silent
+make create-provider-alarms --silent
+make create-provider-kafka --silent
+make create-provider-cloudant --silent
 
 # move wskprops and wsk binary
 mv "$(pwd)"/.wskprops "${HOME}"/.wskprops
