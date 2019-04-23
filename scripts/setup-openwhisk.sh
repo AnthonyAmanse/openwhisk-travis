@@ -26,7 +26,7 @@ WSK_CONFIG_FILE=$(pwd)/.wskprops
 export WSK_CONFIG_FILE
 sudo mv ./openwhisk-src/bin/wsk /usr/local/bin/wsk
 popd
-alias wsk='wsk -i'
+alias wsk='/usr/local/bin/wsk -i'
 alias wsk
 which wsk
 wsk list
