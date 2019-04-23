@@ -27,4 +27,5 @@ export WSK_CONFIG_FILE
 sudo mv ./openwhisk-src/bin/wsk /usr/local/bin/wsk
 popd
 alias wsk='wsk -i'
+which wsk
 wsk list
