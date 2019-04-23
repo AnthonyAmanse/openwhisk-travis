@@ -19,4 +19,6 @@ before_script:
 
 jobs:
   include:
-    - script: "./scripts/setup-openwhisk.sh"
+    - script:
+        - "./scripts/setup-openwhisk.sh"
+        - "./scripts/test-script.sh"

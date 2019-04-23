@@ -24,9 +24,9 @@ pushd incubator-openwhisk-devtools/docker-compose
 make quick-start
 WSK_CONFIG_FILE=$(pwd)/.wskprops
 export WSK_CONFIG_FILE
-sudo mv ./openwhisk-src/bin/wsk /usr/local/bin/wsk
+sudo mv ./openwhisk-src/bin/wsk /usr/local/bin/wsktemp
 popd
-alias wsk='/usr/local/bin/wsk -i'
+alias wsk='/usr/local/bin/wsktemp -i'
 alias wsk
 which wsk
 wsk list
