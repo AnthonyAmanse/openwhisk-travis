@@ -23,7 +23,7 @@ git clone https://github.com/apache/incubator-openwhisk-devtools
 pushd incubator-openwhisk-devtools/docker-compose
 make quick-start
 # move wskprops and wsk binary
-mv $(pwd)/.wskprops /home/travis/.wskprops
+mv "$(pwd)"/.wskprops "${HOME}"/.wskprops
 sudo mv ./openwhisk-src/bin/wsk /usr/local/bin/wsk
 popd
 wsk -i list
